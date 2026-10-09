@@ -1,0 +1,77 @@
+p {
+    margin: 0;
+}
+
+button {
+    font-family: 'Roboto Mono', sans-serif;
+    border: none;
+    background: none;
+}
+
+.box {
+    background-color: #F4FAFE;
+    border-radius: 20px;
+
+    width: 688px;
+    height: 374px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+
+    box-shadow: 0px 0px 45px -24px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 45px -24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 45px -24px rgba(0,0,0,0.75);
+}
+
+.question {
+    padding: 0 70px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.ryo {
+    border-radius: 10px;
+    user-select: none;
+}
+
+.answers {
+    display: flex;
+    gap: 100px;
+}
+
+.answers > button {
+    background-color: #8EC8F2;
+    color: #F4FAFE;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 70px;
+
+    width: 95px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.answers > button:hover {
+    background-color: #a0d0f1;
+}
+
+.answers > button:active {
+    background-color: #7eb7e0;
+}
+
+.no {
+    position: relative;
+}
+
+.explode {
+    display: none;
+    position: absolute;
+    left: 15%;
+    top: -50%;
+    user-select: none;
+}
