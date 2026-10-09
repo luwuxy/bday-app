@@ -27,7 +27,7 @@ function App() {
     const noBtn = noBtnRef.current;
     const noText = noTextRef.current;
 
-    if (timesHovered === 10) {
+    if (timesHovered === 10 && !btnExploded) {
       explodeSound.volume = 0.1;
       explodeSound.currentTime = 0;
       explodeSound.play();
@@ -55,6 +55,26 @@ function App() {
     }
   }
 
+  function noBtnClick() {
+    if (btnExploded) return;
+
+    const explode = explodeRef.current;
+    const noBtn = noBtnRef.current;
+    const noText = noTextRef.current;
+
+    explodeSound.volume = 0.1;
+    explodeSound.currentTime = 0;
+    explodeSound.play();
+    explode.style.display = "inline";
+    noBtn.style.backgroundColor = "rgba(0, 0, 0, 0)";
+    noBtn.style.cursor = "default";
+    noText.textContent = "";
+    btnExploded = true;
+    setTimeout(() => {
+      explode.style.display = "none";
+    }, 1500)
+  }
+
   return (
     <>
       <div className="box" ref={firstBoxRef}>
@@ -62,7 +82,7 @@ function App() {
         <h1 className="question">Would you like to view this gift?</h1>
         <div className="answers">
           <button className="yes">YES</button>
-          <button className="no" ref={noBtnRef} onMouseOver={noBtnHover}>
+          <button className="no" ref={noBtnRef} onMouseOver={noBtnHover} onClick={noBtnClick}>
             <img className="explode" src="img/explosion-boom.gif" alt="explode" ref={explodeRef} draggable="false" />
             <p className="no-text" ref={noTextRef}>NO</p>
           </button>
