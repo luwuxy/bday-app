@@ -2,16 +2,24 @@ p {
     margin: 0;
 }
 
-button {
-    font-family: 'Roboto Mono', sans-serif;
-    border: none;
-    background: none;
+.yes {
+    text-decoration: none;
+    background-color: #8EC8F2;
+    color: #F4FAFE;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 70px;
+
+    width: 95px;
+    height: 45px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .box {
-    background-color: #F4FAFE;
-    border-radius: 20px;
-
     width: 688px;
     height: 374px;
 
@@ -19,13 +27,6 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-
-    box-shadow: 0px 0px 45px -24px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 0px 45px -24px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 45px -24px rgba(0,0,0,0.75);
 }
 
 .question {
@@ -44,7 +45,7 @@ button {
     gap: 100px;
 }
 
-.answers > button {
+.answers>button {
     background-color: #8EC8F2;
     color: #F4FAFE;
     font-size: 24px;
@@ -56,11 +57,11 @@ button {
     cursor: pointer;
 }
 
-.answers > button:hover {
+.answers>button:hover {
     background-color: #a0d0f1;
 }
 
-.answers > button:active {
+.answers>button:active {
     background-color: #7eb7e0;
 }
 

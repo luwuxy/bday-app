@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+::view-transition-old(boxes) {
+    animation: slide-out 0.3s ease-in both;
+}
+
+::view-transition-new(boxes) {
+    animation: none;
+}
+
 body {
     font-family: 'Roboto Mono', sans-serif;
     color: #232F37;
@@ -12,4 +20,38 @@ body {
 
     display: grid;
     place-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    font-family: 'Roboto Mono', sans-serif;
+    border: none;
+    background: none;
+}
+
+.boxes {
+    background-color: #F4FAFE;
+    border-radius: 20px;
+    view-transition-name: boxes;
+
+    box-shadow: 0px 0px 45px -24px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 45px -24px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 45px -24px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes slide-out {
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
 }

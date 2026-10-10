@@ -1,5 +1,6 @@
 import './App.css'
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 
 const explodeSound = new Audio('audio/explodesound.mp3');
 
@@ -77,11 +78,11 @@ function App() {
 
   return (
     <>
-      <div className="box" ref={firstBoxRef}>
+      <div className="box boxes" ref={firstBoxRef}>
         <img className="ryo" src="img/ryo.gif" alt="Ryo" width={90} draggable="false" />
         <h1 className="question">Would you like to view this gift?</h1>
         <div className="answers">
-          <button className="yes">YES</button>
+          <Link to="quiz" className="yes" viewTransition>YES</Link>
           <button className="no" ref={noBtnRef} onMouseOver={noBtnHover} onClick={noBtnClick}>
             <img className="explode" src="img/explosion-boom.gif" alt="explode" ref={explodeRef} draggable="false" />
             <p className="no-text" ref={noTextRef}>NO</p>
